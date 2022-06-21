@@ -1,11 +1,17 @@
+#ifndef _IOSTREAM_
 #include <iostream>
+#endif // !_IOSTREAM_
+
+#ifndef _SDL2_
 #include <SDL2/SDL.h>
+#endif // !_SDL2_
+
+#include "./include/SDL2drawing.h"
 
 const int WIDTH = 800,HEIGHT = 600;
 
 int main(int argc,char *argv[])
 {
-
     SDL_Init(SDL_INIT_EVERYTHING);
 
     SDL_Window *window = SDL_CreateWindow("Hello SDL World",
