@@ -9,16 +9,16 @@ class ShapesDrawing
 
     SDL_Window *m_dWindow;
     SDL_Renderer *m_dRenderer;
-    Shapes m_dShapes;
+    Shapes *m_dShapes;
     
-    bool m_dRunning = false;
+    bool m_dRunning;
 
     public:
 
     ShapesDrawing();
     ~ShapesDrawing();
 
-    bool init(const char* title,int x,int y,int width,int height);
+    bool init(const char* title,int x,int y,int width,int height,int flags);
     void handleEvents();
     void update();
     void render();
@@ -26,27 +26,25 @@ class ShapesDrawing
     bool running();
 };
 
-void ShapesDrawing::ShapesDrawing()
+ShapesDrawing::ShapesDrawing()
 {
 
 };
 
-void ShapesDrawing::~ShapesDrawing()
+ShapesDrawing::~ShapesDrawing()
 {
-    delete[] m_dWindow;
-    delete[] m_dRenderer;
-    delete[] m_dShapes;
+
 };
 
-bool ShapesDrawing::init(const char* title,int x,int y,int width,int height)
+bool ShapesDrawing::init(const char* title,int x,int y,int width,int height,int flags)
 {
     if(SDL_Init(SDL_INIT_EVERYTHING) >= 0)
     {
-        this->m_dWindow = SDL_CreateWindow(title,x,y,width,height);
+        this->m_dWindow = SDL_CreateWindow(title,x,y,width,height,flags);
 
         if(this->m_dWindow != NULL)
         {
-            this->m_dRenderer = SDL_CreateRenderer(this->m_dRenderer,-1,0);
+            this->m_dRenderer = SDL_CreateRenderer(this->m_dWindow,-1,0);
         }
     }
     else

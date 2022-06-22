@@ -16,7 +16,7 @@ class Shapes
 
     Shapes(SDL_Window &window,SDL_Renderer &renderer);
 
-    bool drawCercle(std::vector center,float radius);
+    bool drawCercle(std::vector<double,double> center,float radius);
     bool drawRect(int x,int y,int width,int height);
     bool drawTriangle();
 
