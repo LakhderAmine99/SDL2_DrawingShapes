@@ -18,6 +18,18 @@ class ShapesDrawing
     ShapesDrawing();
     ~ShapesDrawing();
 
+    /**
+     * @brief 
+     * 
+     * @param title char*
+     * @param x int
+     * @param y int
+     * @param width int
+     * @param height int
+     * @param flags int
+     * @return true if the initialization is sucessed else returns false.
+     * 
+     */
     bool init(const char* title,int x,int y,int width,int height,int flags);
     void handleEvents();
     void update();
@@ -36,6 +48,18 @@ ShapesDrawing::~ShapesDrawing()
 
 };
 
+/**
+ * @brief 
+ * 
+ * @param title char*
+ * @param x int
+ * @param y int
+ * @param width int
+ * @param height int
+ * @param flags int
+ * @return true if the initialization is sucessed else returns false.
+ * 
+ */
 bool ShapesDrawing::init(const char* title,int x,int y,int width,int height,int flags)
 {
     if(SDL_Init(SDL_INIT_EVERYTHING) >= 0)
