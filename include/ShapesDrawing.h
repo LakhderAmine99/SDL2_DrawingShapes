@@ -15,37 +15,15 @@ class ShapesDrawing
 
     public:
 
-    ShapesDrawing();
-    ~ShapesDrawing();
+    ShapesDrawing(){};
+    ~ShapesDrawing(){};
 
-    /**
-     * @brief 
-     * 
-     * @param title char*
-     * @param x int
-     * @param y int
-     * @param width int
-     * @param height int
-     * @param flags int
-     * @return true if the initialization is sucessed else returns false.
-     * 
-     */
     bool init(const char* title,int x,int y,int width,int height,int flags);
     void handleEvents();
     void update();
     void render();
     void clean();
     bool running();
-};
-
-ShapesDrawing::ShapesDrawing()
-{
-
-};
-
-ShapesDrawing::~ShapesDrawing()
-{
-
 };
 
 /**
@@ -68,7 +46,22 @@ bool ShapesDrawing::init(const char* title,int x,int y,int width,int height,int 
 
         if(this->m_dWindow != NULL)
         {
+            std::cout <<"Window creation success\n";
             this->m_dRenderer = SDL_CreateRenderer(this->m_dWindow,-1,0);
+
+            if(this->m_dRenderer != NULL)
+            {
+                std::cout <<"Renderer creation success\n";
+                SDL_SetRenderDrawColor(this->m_dRenderer,0,0,0,255);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
         }
     }
     else
@@ -88,7 +81,7 @@ bool ShapesDrawing::running()
 
 void ShapesDrawing::handleEvents()
 {
-
+    SDL_
 };
 
 void ShapesDrawing::update()
@@ -98,12 +91,16 @@ void ShapesDrawing::update()
 
 void ShapesDrawing::render()
 {
-
+    SDL_RenderClear(this->m_dRenderer);
+    SDL_RenderPresent(this->m_dRenderer);
 };
 
 void ShapesDrawing::clean()
 {
-
+    std::cout <<"Cleaning up everything\n";
+    SDL_DestroyWindow(this->m_dWindow);
+    SDL_DestroyRenderer(this->m_dRenderer);
+    SDL_Quit();
 };
 
 #endif // __ShapesDrawing
