@@ -18,7 +18,7 @@ class ShapesDrawing
     ShapesDrawing(){};
     ~ShapesDrawing(){};
 
-    bool init(const char* title,int x,int y,int width,int height,int flags);
+    bool init(const char* title,int x,int y,int width,int height,bool fullScreen);
     void handleEvents();
     void update();
     void render();
@@ -38,8 +38,10 @@ class ShapesDrawing
  * @return true if the initialization is sucessed else returns false.
  * 
  */
-bool ShapesDrawing::init(const char* title,int x,int y,int width,int height,int flags)
+bool ShapesDrawing::init(const char* title,int x,int y,int width,int height,bool fullScreen)
 {
+    int flags = !fullScreen ? 0 : SDL_WINDOW_FULLSCREEN;
+
     if(SDL_Init(SDL_INIT_EVERYTHING) >= 0)
     {
         this->m_dWindow = SDL_CreateWindow(title,x,y,width,height,flags);
@@ -81,7 +83,20 @@ bool ShapesDrawing::running()
 
 void ShapesDrawing::handleEvents()
 {
-    SDL_
+    SDL_Event event;
+
+    if(SDL_PollEvent(&event) != 0)
+    {
+        switch (event.type)
+        {
+        case SDL_QUIT:
+            this->m_dRunning = false;
+        break;
+        
+        default:
+            break;
+        }
+    }
 };
 
 void ShapesDrawing::update()
