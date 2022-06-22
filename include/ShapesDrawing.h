@@ -23,6 +23,7 @@ class ShapesDrawing
     void update();
     void render();
     void clean();
+    bool running();
 };
 
 void ShapesDrawing::ShapesDrawing()
@@ -53,7 +54,14 @@ bool ShapesDrawing::init(const char* title,int x,int y,int width,int height)
         return false;
     }
 
+    this->m_dRunning = true;
+
     return true;
+};
+
+bool ShapesDrawing::running()
+{
+    return this->m_dRunning;
 };
 
 void ShapesDrawing::handleEvents()
