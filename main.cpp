@@ -1,11 +1,3 @@
-#ifndef _IOSTREAM_
-#include <iostream>
-#endif // !_IOSTREAM_
-
-#ifndef _SDL2_
-#include <SDL2/SDL.h>
-#endif // !_SDL2_
-
 #include "./include/ShapesDrawing.h"
 
 const int WIDTH = 800,HEIGHT = 600;

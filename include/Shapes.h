@@ -9,17 +9,17 @@ class Shapes
 {
     private:
 
-    SDL_Window *s_sWindow;
-    SDL_Renderer *s_sRenderer;
+    SDL_Window *m_sWindow;
+    SDL_Renderer *m_sRenderer;
 
     public:
 
-    Shapes(SDL_Window &window,SDL_Renderer &renderer);
+    Shapes(SDL_Window *window,SDL_Renderer *renderer);
 
-    bool drawCercle(std::vector<double,double> center,float radius);
+    bool drawCercle(std::vector<double> center,float radius);
     bool drawRect(int x,int y,int width,int height);
-    bool drawTriangle();
+    bool drawTriangle(std::vector<int> A_vertex,std::vector<int> B_vertex,std::vector<int> C_vertex);
 
 };
 
-#endif /* defined(__Game__) */
+#endif //__Shapes__
