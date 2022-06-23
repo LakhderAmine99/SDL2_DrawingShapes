@@ -47,6 +47,8 @@ bool ShapesDrawing::init(const char* title,int x,int y,int width,int height,bool
 
     this->m_dRunning = true;
 
+    this->m_dShapes = new Shapes(this->m_dWindow,this->m_dRenderer);
+
     return true;
 };
 
