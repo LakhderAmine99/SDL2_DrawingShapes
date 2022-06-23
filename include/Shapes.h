@@ -2,7 +2,6 @@
 #define __Shapes__
 
 #include <iostream>
-#include <vector>
 #include <SDL2/SDL.h>
 
 class Shapes
@@ -17,9 +16,9 @@ class Shapes
     Shapes(SDL_Window *window,SDL_Renderer *renderer);
     ~Shapes();
 
-    bool drawCercle(std::vector<double> center,float radius);
+    bool drawCercle(double centerX,double centerY,float radius);
     bool drawRect(int x,int y,int width,int height);
-    bool drawTriangle(std::vector<int> A_vertex,std::vector<int> B_vertex,std::vector<int> C_vertex);
+    bool drawTriangle(double AX_vertex,double AY_vertex,double BX_vertex,double BY_vertex,double CX_vertex,double CY_vertex);
 
 };
 

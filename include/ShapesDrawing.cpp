@@ -87,6 +87,8 @@ void ShapesDrawing::render()
     SDL_RenderClear(this->m_dRenderer);
 
     this->m_dShapes->drawRect(50,50,250,100);
+
+    this->m_dShapes->drawTriangle(150,180,300,400,0,400);
     
     SDL_RenderPresent(this->m_dRenderer);
 
