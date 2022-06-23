@@ -85,6 +85,9 @@ void ShapesDrawing::update()
 void ShapesDrawing::render()
 {
     SDL_RenderClear(this->m_dRenderer);
+
+    this->m_dShapes->drawRect(0,0,0,0);
+    
     SDL_RenderPresent(this->m_dRenderer);
 
     return;
@@ -93,8 +96,22 @@ void ShapesDrawing::render()
 void ShapesDrawing::clean()
 {
     std::cout <<"Cleaning up everything\n";
+
+    delete &this->m_dWindow;
+    delete &this->m_dRenderer;
+    delete []this->m_dShapes;
+
+    SDL_free(this->m_dWindow);
+    SDL_free(this->m_dRenderer);
+    SDL_free(this->m_dShapes);
+    
     SDL_DestroyWindow(this->m_dWindow);
     SDL_DestroyRenderer(this->m_dRenderer);
+    
+    this->m_dWindow = NULL;
+    this->m_dRenderer = NULL;
+    this->m_dShapes = NULL;
+    
     SDL_Quit();
 
     return;
