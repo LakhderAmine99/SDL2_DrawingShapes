@@ -2,8 +2,8 @@
 
 ## Build
 
-    - mingw32-make
+    mingw32-make
 
 ## Run 
 
-    - ./out/main
+    ./out/main
