@@ -27,22 +27,24 @@ bool Shapes::drawRect(int x,int y,int width,int height)
 {
     SDL_SetRenderDrawColor(this->m_sRenderer,255,0,0,255);
     
-    for (size_t i = 0; i < 150; i++)
-    {
-        SDL_RenderDrawPoint(this->m_sRenderer,i,i);
-    }
+    SDL_RenderDrawLine(this->m_sRenderer,x,y,x+width,y);
+    SDL_RenderDrawLine(this->m_sRenderer,x,y,x,y+height);
+    SDL_RenderDrawLine(this->m_sRenderer,x+width,y,x+width,y+height);
+    SDL_RenderDrawLine(this->m_sRenderer,x,y+height,x+width,y+height);
     
     SDL_SetRenderDrawColor(this->m_sRenderer,0,0,0,255);
 
     return true;
 }
 
-bool Shapes::drawCercle(std::vector<double> center,float radius)
+bool Shapes::drawCercle(double centerX,double centerY,float radius)
 {
     return true;
 }
 
-bool Shapes::drawTriangle(std::vector<int> A_vertex,std::vector<int> B_vertex,std::vector<int> C_vertex)
+bool Shapes::drawTriangle(double AX_vertex,double AY_vertex,double BX_vertex,double BY_vertex,double CX_vertex,double CY_vertex)
 {
+    
+
     return true;
 }
