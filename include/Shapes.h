@@ -15,6 +15,7 @@ class Shapes
     public:
 
     Shapes(SDL_Window *window,SDL_Renderer *renderer);
+    ~Shapes();
 
     bool drawCercle(std::vector<double> center,float radius);
     bool drawRect(int x,int y,int width,int height);
