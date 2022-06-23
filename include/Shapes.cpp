@@ -44,7 +44,13 @@ bool Shapes::drawCercle(double centerX,double centerY,float radius)
 
 bool Shapes::drawTriangle(double AX_vertex,double AY_vertex,double BX_vertex,double BY_vertex,double CX_vertex,double CY_vertex)
 {
+    SDL_SetRenderDrawColor(this->m_sRenderer,0,255,0,255);
     
+    SDL_RenderDrawLine(this->m_sRenderer,AX_vertex,AY_vertex,CX_vertex,CY_vertex);
+    SDL_RenderDrawLine(this->m_sRenderer,CX_vertex,CY_vertex,BX_vertex,BY_vertex);
+    SDL_RenderDrawLine(this->m_sRenderer,BX_vertex,BY_vertex,AX_vertex,AY_vertex);
+    
+    SDL_SetRenderDrawColor(this->m_sRenderer,0,0,0,255);
 
     return true;
 }
