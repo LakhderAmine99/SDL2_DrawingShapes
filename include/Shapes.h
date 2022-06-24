@@ -2,6 +2,7 @@
 #define __Shapes__
 
 #include <iostream>
+#include <cmath>
 #include <SDL2/SDL.h>
 
 class Shapes

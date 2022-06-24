@@ -19,5 +19,7 @@ int main(int argc,char *argv[])
     
     shapesDrawing->clean();
 
+    delete shapesDrawing;
+
     return EXIT_SUCCESS;
 }

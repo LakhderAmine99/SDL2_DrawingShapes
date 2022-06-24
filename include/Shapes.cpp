@@ -39,6 +39,20 @@ bool Shapes::drawRect(int x,int y,int width,int height)
 
 bool Shapes::drawCercle(double centerX,double centerY,float radius)
 {
+    SDL_SetRenderDrawColor(this->m_sRenderer,255,128,0,255);
+
+    double x,y;
+
+    for(double angle = 0; angle < 360; angle += 0.1)
+    {
+        x = centerX + radius * cos(angle);
+        y = centerY + radius * sin(angle);
+
+        SDL_RenderDrawPoint(this->m_sRenderer,x,y);
+    }
+
+    SDL_SetRenderDrawColor(this->m_sRenderer,0,0,0,255);
+
     return true;
 }
 
