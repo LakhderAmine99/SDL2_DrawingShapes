@@ -89,6 +89,8 @@ void ShapesDrawing::render()
     this->m_dShapes->drawRect(50,50,250,100);
 
     this->m_dShapes->drawTriangle(150,180,300,400,0,400);
+
+    this->m_dShapes->drawCercle(450,200,100);
     
     SDL_RenderPresent(this->m_dRenderer);
 
@@ -113,6 +115,8 @@ void ShapesDrawing::clean()
     this->m_dWindow = NULL;
     this->m_dRenderer = NULL;
     this->m_dShapes = NULL;
+
+    delete this;
     
     SDL_Quit();
 
