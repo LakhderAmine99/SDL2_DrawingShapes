@@ -23,7 +23,7 @@ bool ShapesDrawing::init(const char* title,int x,int y,int width,int height,bool
         if(this->m_dWindow != NULL)
         {
             std::cout <<"Window creation success\n";
-            this->m_dRenderer = SDL_CreateRenderer(this->m_dWindow,-1,0);
+            this->m_dRenderer = SDL_CreateRenderer(this->m_dWindow,-1,SDL_RENDERER_PRESENTVSYNC);
 
             if(this->m_dRenderer != NULL)
             {
@@ -91,6 +91,8 @@ void ShapesDrawing::render()
     this->m_dShapes->drawTriangle(150,180,300,400,0,400);
 
     this->m_dShapes->drawCercle(450,200,100);
+
+    this->m_dShapes->drawParabola(600,500,1,100,32);
     
     SDL_RenderPresent(this->m_dRenderer);
 
