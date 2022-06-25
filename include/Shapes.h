@@ -21,6 +21,7 @@ class Shapes
     bool drawRect(int x,int y,int width,int height);
     bool drawTriangle(double AX_vertex,double AY_vertex,double BX_vertex,double BY_vertex,double CX_vertex,double CY_vertex);
 
+    bool drawParabola(double centerX,double centerY,double subdivision=0.1,double numberOfpints=50,double latusRectum=16);
 };
 
 #endif //__Shapes__

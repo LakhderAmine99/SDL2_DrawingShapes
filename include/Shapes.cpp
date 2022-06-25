@@ -68,3 +68,22 @@ bool Shapes::drawTriangle(double AX_vertex,double AY_vertex,double BX_vertex,dou
 
     return true;
 }
+
+bool Shapes::drawParabola(double centerX,double centerY,double subdivision,double numberOfpints,double latusRectum)
+{
+    SDL_SetRenderDrawColor(this->m_sRenderer,195,255,0,255);
+
+    double x,y;
+
+    for(double variation = -numberOfpints; variation <= numberOfpints; variation += subdivision)
+    {
+        x = centerX + variation;
+        y = -1*(variation*variation/latusRectum) + centerY;
+
+        SDL_RenderDrawPoint(this->m_sRenderer,x,y);
+    }
+
+    SDL_SetRenderDrawColor(this->m_sRenderer,0,0,0,255);
+
+    return true;
+}
